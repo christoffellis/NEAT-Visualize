@@ -1,2 +1,6 @@
 # NEAT-Visualize
-A small script for visualizing NEAT-Python genomes in Pygame
+A script for visualizing NEAT-Python genomes in Pygame
+
+Dependencies:
+- Pygame
+- NEAT-Python
