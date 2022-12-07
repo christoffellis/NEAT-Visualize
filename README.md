@@ -1,6 +1,11 @@
 # NEAT-Visualize
 A script for visualizing NEAT-Python genomes in Pygame
 
+Usage:
+'''Python
+drawNetwork(config, ge[highIndex], (X, Y), show_disabled=False, node_names=[])
+'''
+
 Dependencies:
 - Pygame
 - NEAT-Python
