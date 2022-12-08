@@ -21,3 +21,4 @@ TODO:
 - Make the input node descriptions fit better
 - Add output note descriptions
 - Add logic for sorting and placing the hidden layer nodes better
+- Add feature for saving as PNG or JPEG
