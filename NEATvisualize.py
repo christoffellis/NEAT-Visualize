@@ -26,7 +26,8 @@ def draw_network(config: neat.Config, genome: neat.DefaultGenome, size: tuple, n
     if colors is None:
         colors = [(255, 25, 25), (25, 255, 25)]
 
-    screen = pygame.Surface(size)
+    screen = pygame.Surface(size, pygame.SRCALPHA, 32)
+    screen = screen.convert_alpha()
 
     # Gather list of inputs, outputs and hidden nodes
     inputs = []
