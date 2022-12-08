@@ -11,6 +11,8 @@ drawNetwork(
         show_disabled: bool = True,
         colors: list[tuple[int, int, int]] = None) -> pygame.Surface:
 ```
+## Output Example
+![Screenshot](/Screenshots/screenshot.png)
 
 Dependencies:
 - Pygame
