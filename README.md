@@ -2,16 +2,15 @@
 A script for visualizing NEAT-Python genomes in Pygame
 
 Usage:
-'''python
+```python
 drawNetwork(
         config: neat.Config,
         genome: neat.DefaultGenome,
         size: tuple,
         node_names: list[list[str]] = None,
         show_disabled: bool = True,
-        colors: list[tuple[int, int, int]] = None)
-        -> pygame.Surface:
-'''
+        colors: list[tuple[int, int, int]] = None) -> pygame.Surface:
+```
 
 Dependencies:
 - Pygame
