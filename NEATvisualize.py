@@ -1,7 +1,7 @@
 import pygame
 
 
-def drawNetwork(config, genome, size, node_names=None, show_disabled=True):
+def drawNetwork(config, genome, size, node_names=None, show_disabled=True, colors=[(255, 25, 25), (25, 255, 25)]):
     screen = pygame.Surface((size))
 
     inputs = []
@@ -34,8 +34,9 @@ def drawNetwork(config, genome, size, node_names=None, show_disabled=True):
             input, output = cg.key
             a = str(input)
             b = str(output)
-            widthColour = min(127, max(0, (cg.weight / 4) * 127))
-            color = (127 - widthColour, 127 + widthColour, 0) if cg.enabled else 'gray'
+
+            color = color_mix(colors, cg.weight) if cg.enabled else 'gray'
+
             aPos = get_position(a, inputs, outputs, hidden_keys, size, r, maxLayers)
             bPos = get_position(b, inputs, outputs, hidden_keys, size, r, maxLayers)
 
@@ -113,3 +114,13 @@ def writeText(screen, string, coordx, coordy, colour, center=True, background=No
     else:
         textRect.topleft = (coordx, coordy)
     screen.blit(text, textRect)
+
+def clamp(val):
+    return min(1, max(val, 0))
+
+def color_mix(colors, weight):
+    return [
+        (colors[0][0] * clamp(weight / 4) + colors[1][0] * (1-clamp(weight / 4))),
+        (colors[0][1] * clamp(weight / 4) + colors[1][1] * (1-clamp(weight / 4))),
+        (colors[0][2] * clamp(weight / 4) + colors[1][2] * (1-clamp(weight / 4))),
+    ]
